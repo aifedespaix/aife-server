@@ -1,10 +1,10 @@
 import io, {Server, Socket} from 'socket.io';
-import CubeModule from '../Modules/Cube.module';
+import CharacterModule from '../Modules/Character.module';
 import HttpServer from './HttpServer';
 
 export default class SocketServer {
   private _io: Server;
-  private cubeModule!: CubeModule;
+  private cubeModule!: CharacterModule;
 
   get io(): any {
     return this._io;
@@ -16,6 +16,6 @@ export default class SocketServer {
   }
 
   private init() {
-    this.cubeModule = new CubeModule(this.io);
+    this.cubeModule = new CharacterModule(this.io);
   }
 }
